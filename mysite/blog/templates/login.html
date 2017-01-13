@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+    <title>Title</title>
+    <script type="text/javascript" src="{% static 'jquery.js' %}"></script>
+</head>
+<body background="{% static 'tarunn.jpg' %}">
+<div id="cont">
+	<ul>
+		<li>Home</li>
+		<li>Achievements</li>
+		<li>About Us</li>
+		<li>History</li>
+		<li>Contact Us</li>
+	</ul>
+</div>
+<div>
+	{% for post in posts %}
+    {{post.title}}
+	<br><br>
+    {{post.published_date}}
+    <br><br><br><br><br>
+{% endfor %}
+</div>
+<img src="{% static 'loginn.jpg' %}" id="image">
+<img src="{% static 'images.png' %}" id="image1">
+<section id="form_before_launch" class="lpo">
+	<p>Log In</p>
+	<form method="post" onsubmit="return false" id="form">
+		<div>
+			<div>
+				<img src="cross" id="cross">
+			</div>
+			<div>
+				<input type="text" id="username" placeholder="Enter Username"/>
+			</div>
+			<div>
+				<input type="password" id="password" placeholder="Enter Password"/>
+			</div>
+			<div id="di">
+				<input type="submit" id="submit" value="Log In"/>
+			</div>
+			<div>
+				<input type="submit" id="submit2" value="Forget Password"/>
+			</div>
+			
+		</div>
+		
+	</form>
+</section><br><br><br><br><br><br><Br><br><br><br><br><br><br><br><br><br><br><br><br><Br><br><br><br><br><br><br><br><br><br><br><br><br><Br><br><br>
+<marquee id="ma">THIS WEBPAGE IS IN UNDER-CONTRUCTION...</marquee>
+<br><br><br><br><br><br><Br><br><br><br><br><br><br>
+</body>
+</html>
+<script>
+
+	$(document).ready(function(){
+
+		$("#form_before_launch").click(function(){
+
+			$(this).animate({height:"300px",width:"400px"});
+			$(this).children("p").animate({fontSize:"25px"});
+			$("#form").delay(500).fadeIn(500);
+
+		})
+		$("#cross").click(function(){
+			$("#form_before_launch").fadeOut(1230);
+			$("#image").delay(500).fadeIn();
+		})
+		$("#image").click(function(){
+			$("#form_before_launch").delay(500).slideDown().fadeIn();
+			$("#image").fadeOut();
+		})
+
+		
+
+			})
+</script>
